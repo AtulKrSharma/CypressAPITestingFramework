@@ -1,0 +1,12 @@
+# never include node_modules/
+node_modules/
+
+# not including unnecessary files
+customCommands.d.ts
+
+# not including videos and individual reports into the repo
+cypress/videos/
+cypress/reports/
+cypress/screenshots/
+mochawesome-report/
+cypress/integration/examples/

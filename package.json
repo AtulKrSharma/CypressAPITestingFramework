@@ -1,0 +1,11 @@
+{
+  "name": "cypressapitestingframework",
+  "version": "1.0.0",
+  "description": "Cypress API Automation Framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Atul Kumar Sharma",
+  "license": "ISC"
+}
