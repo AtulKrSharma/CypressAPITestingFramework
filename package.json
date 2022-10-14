@@ -4,8 +4,12 @@
   "description": "Cypress API Automation Framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "Cyopen": "npx Cypress open",
+    "Cyrun": "npx Cypress run"
   },
   "author": "Atul Kumar Sharma",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cypress-plugin-api": "^1.3.0"
+  }
 }
