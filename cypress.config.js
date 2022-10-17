@@ -6,6 +6,5 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     watchForFileChanges: false,
-    failOnStatusCode: false,
   },
 });

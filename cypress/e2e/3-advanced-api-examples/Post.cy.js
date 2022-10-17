@@ -1,6 +1,6 @@
 const dataJson = require("../../fixtures/post.json");
 
-describe("Post Call", () => {
+describe("Post", () => {
   const baseURL = "https://jsonplaceholder.typicode.com";
 
   it("CreatePost + fixtures Json", () => {

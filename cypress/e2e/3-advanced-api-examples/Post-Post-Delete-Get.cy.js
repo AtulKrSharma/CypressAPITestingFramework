@@ -1,9 +1,9 @@
 //https://restful-booker.herokuapp.com/apidoc/index.html
 
-describe("PUT", () => {
+describe("Delete", () => {
   const baseURL = "https://restful-booker.herokuapp.com";
   it("Post-Post-Put-Get", () => {
-    //Auth Token- Post
+    //Auth Token-Post
     cy.api({
       url: baseURL + "/auth",
       method: "POST",
@@ -16,9 +16,9 @@ describe("PUT", () => {
         "Cache-Control": "no-cache",
         followRedirect: false, // turn off following redirects
       },
-    }).as("GetAuthToken");
+    }).as("GetAuthTokenByPostCall");
 
-    cy.get("@GetAuthToken")
+    cy.get("@GetAuthTokenByPostCall")
       .then(function (respo) {
         expect(respo.status).to.equal(200);
         //Got the Auth token
@@ -44,10 +44,12 @@ describe("PUT", () => {
           headers: {
             "content-type": "application/json; charset=utf-8",
             "Cache-Control": "no-cache",
-            followRedirect: false, // turn off following redirects
+            followRedirect: false,
             Cookie: "token=" + tokenValue,
           },
-        })
+        }).as("BookingCreatedByPostCall");
+
+        cy.get("@BookingCreatedByPostCall")
           .then((respo) => {
             expect(respo.status).to.equal(200);
             let bookingIdValue = respo.body.bookingid;
@@ -58,27 +60,37 @@ describe("PUT", () => {
             //Booking updated
             cy.api({
               url: baseURL + "/booking/" + bookingIdValue,
-              method: "PUT",
-              body: {
-                firstname: "Lucky",
-                lastname: "Bhardwaj",
-                totalprice: 21218,
-                depositpaid: false,
-                bookingdates: {
-                  checkin: "2018-01-01",
-                  checkout: "2019-02-01",
-                },
-                additionalneeds: "Breakfast, Dinnner",
-              },
+              method: "DELETE",
               headers: {
                 "content-type": "application/json; charset=utf-8",
                 "Cache-Control": "no-cache",
-                followRedirect: false, // turn off following redirects
+                followRedirect: false,
                 Cookie: "token=" + tokenValue,
               },
-            }).then((respo) => {
-              expect(respo.status).to.equal(200);
-            });
+            }).as("BookingDeletedByDeleteCall");
+
+            cy.get("@BookingDeletedByDeleteCall")
+              .then((respo) => {
+                expect(respo.status).to.equal(201);
+              })
+              .then(() => {
+                cy.api({
+                  url: baseURL + "/booking/" + bookingIdValue,
+                  failOnStatusCode: false,
+                  method: "GET",
+                  headers: {
+                    "content-type": "application/json; charset=utf-8",
+                    "Cache-Control": "no-cache",
+                    followRedirect: false,
+                    Cookie: "token=" + tokenValue,
+                  },
+                }).as("GetBookingByGetCall");
+
+                cy.get("@GetBookingByGetCall").then((respo) => {
+                  expect(respo.status).to.equal(404);
+                  expect(respo.body).to.equal("Not Found");
+                });
+              });
           });
       });
   });
