@@ -1,4 +1,4 @@
-//https://restful-booker.herokuapp.com/apidoc/index.html
+//http://coop.apps.symfonycasts.com
 
 describe("oAuth2.0", () => {
   const baseURLoAuth = "http://coop.apps.symfonycasts.com";
@@ -9,10 +9,9 @@ describe("oAuth2.0", () => {
       method: "POST",
       form: true,
       body: {
-        client_id: "AtulOAuthApp",
-        client_secret: "a9a988974ce7920ff678f1f32ddb745d",
+        client_id: "NanaZomato",
+        client_secret: "41b217bac8cf379c6319ab5dee980f5d",
         grant_type: "client_credentials",
-        //redirect_uri: "https://youtube.com",
       },
     }).as("GetoAuthToken");
 
