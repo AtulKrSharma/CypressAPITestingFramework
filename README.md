@@ -2,6 +2,10 @@
 
 > Cypress API Testing Framework using JavaScript
 
+> Test Result
+
+<img width="900" alt="CyCapture" src="https://user-images.githubusercontent.com/49794348/196416661-fa16bab2-246e-44dd-8764-91c55705613d.PNG">
+
 ## Links
 
 - [Cypress code](https://github.com/cypress-io/cypress)
@@ -36,5 +40,6 @@
 - [cypress-axe](https://github.com/component-driven/cypress-axe) - Test accessibility with axe-core in Cypress.
 - [Cypress Visual Regression](https://github.com/mjhea0/cypress-visual-regression) - Module for adding visual regression testing to Cypress.
 - [Cypress GitHub Action](https://github.com/cypress-io/github-action)
-
+- [Cypress oAuth2.0](https://docs.cypress.io/guides/end-to-end-testing/google-authentication#Custom-Command-for-Google-Authentication)
+- [Cypress Vs WebDriver.io](https://www.browserstack.com/guide/cypress-vs-webdriverio)
 
