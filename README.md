@@ -37,4 +37,5 @@
 - [Cypress Visual Regression](https://github.com/mjhea0/cypress-visual-regression) - Module for adding visual regression testing to Cypress.
 - [Cypress GitHub Action](https://github.com/cypress-io/github-action)
 - [Cypress oAuth2.0](https://docs.cypress.io/guides/end-to-end-testing/google-authentication#Custom-Command-for-Google-Authentication)
+- [Cypress Vs WebDriver.io](https://www.browserstack.com/guide/cypress-vs-webdriverio)
 
