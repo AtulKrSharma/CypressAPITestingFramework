@@ -20,6 +20,7 @@ describe("oAuth2.0", () => {
     }).then((response) => {
       expect(response.status).to.equal(200);
       JSON.stringify(response.body);
+      // hi, I'm on github.com
     });
 
     //   //Auth Token-Post
