@@ -19,14 +19,13 @@ describe("oAuth2.0", () => {
       },
     }).then((response) => {
       expect(response.status).to.equal(200);
-      JSON.stringify(response.body);
-      // hi, I'm on local dir
-    });
+    JSON.stringify(response.body);
+  // hi, I'm on local dir 
 
     //   //Auth Token-Post
     //   cy.api({
     //     url: baseURLoAuth + "/token",
-    //     method: "POST",
+    //    method: "POST",
     //     form: true,
     //     body: {
     //       client_id: "AtulOAuthApp",
