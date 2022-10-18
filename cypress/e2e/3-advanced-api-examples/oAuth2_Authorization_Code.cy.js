@@ -20,9 +20,7 @@ describe("oAuth2.0", () => {
     }).then((response) => {
       expect(response.status).to.equal(200);
     JSON.stringify(response.body);
-<<<<<<< HEAD
-     // hi, I'm on local dir to showcase the power of git.
-
+      //hello, I'm on github.com
     //   //Auth Token-Post
     //   cy.api({
     //     url: baseURLoAuth + "/token",
@@ -83,8 +81,5 @@ describe("oAuth2.0", () => {
     //           });
     //         });
     //     });
-=======
-     // hi, I'm on github.com
->>>>>>> ca19eda8f1088abf93063429a096ce5bf496401e
   });
 });
