@@ -1,0 +1,11 @@
+name: Firefox
+on: push
+jobs:
+  firefox:
+    runs-on: ubuntu-22.04
+    name: E2E on Firefox
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cypress-io/github-action@v6
+        with:
+          browser: firefox
